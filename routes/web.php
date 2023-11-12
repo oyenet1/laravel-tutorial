@@ -21,16 +21,19 @@ Route::get('/', function () {
 //     return "I am learning LARAVEL";
 // });
 
+// using view method
+Route::view('/contact', 'contact');
+
+// get method
 // Route::get('/about', function () {
 //     $name = "Anthony";
 //     $age = 67;
 //     return view('about', ['name' => $name, 'age' => $age]);
 // });
 
+// passing data to view
 Route::get('/about', function () {
     $name = "Anthony";
     $age = 67;
-    return view('about', ['name' => $name, 'age' => $age]);
+    return view('about', compact(['name', 'age']));
 });
-
-Route::view('/contact', 'contact');
