@@ -16,21 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-// Route::get('/about', function () {
-//     return "I am learning LARAVEL";
-// });
-
-// Route::get('/about', function () {
-//     $name = "Anthony";
-//     $age = 67;
-//     return view('about', ['name' => $name, 'age' => $age]);
-// });
-
-Route::get('/about', function () {
-    $name = "Anthony";
-    $age = 67;
-    return view('about', ['name' => $name, 'age' => $age]);
-});
-
-Route::view('/contact', 'contact');
