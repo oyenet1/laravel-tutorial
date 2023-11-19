@@ -1,7 +1,5 @@
 <?php
-
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+// use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,10 +10,14 @@ use App\Http\Controllers\UserController;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
+ */
 
-Route::get('/', [UserController::class, 'welcome']);
+Route::get('/', [\App\Http\Controllers\PostController::class, 'homepage'])->name('homepage');
+Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index']);
+Route::get('/posts/{id}', [\App\Http\Controllers\PostController::class, 'show']);
+// Route::get('/posts/{id}', function ($id) {
+//     return view('posts.show', compact(['id']));
+// });
 
-Route::get('/details', [UserController::class, 'details']);
-
+Route::view('/abouttodo', 'about')->name('about');
 // php artisan make:controller
