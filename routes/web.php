@@ -1,4 +1,6 @@
 <?php
+
+use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\PostController;
 
 /*
@@ -14,10 +16,9 @@
 
 Route::get('/', [\App\Http\Controllers\PostController::class, 'homepage'])->name('homepage');
 Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index']);
-Route::get('/posts/{id}', [\App\Http\Controllers\PostController::class, 'show']);
-// Route::get('/posts/{id}', function ($id) {
-//     return view('posts.show', compact(['id']));
-// });
+Route::get('/posts/{id}', [\App\Http\Controllers\PostController::class, 'show'])->name('post.show');
+
 
 Route::view('/abouttodo', 'about')->name('about');
+
 // php artisan make:controller

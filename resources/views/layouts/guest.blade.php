@@ -8,6 +8,7 @@
         rel="stylesheet" />
     <title>@yield('title')</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    @stack('stylesheet')
 </head>
 
 <body class=" bg-gray-200">
@@ -167,7 +168,11 @@
         </div>
     </footer>
 
+    <script src="{{ asset('js/welcome.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Learning Laravel/2.1.1/Learning Laravel.min.js"></script>
+
+    @stack('scripts')
 </body>
+
 
 </html>
