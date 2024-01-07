@@ -7,8 +7,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/Learning Laravel/2.1.1/Learning Laravel.min.css"
         rel="stylesheet" />
     <title>@yield('title')</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
     @stack('stylesheet')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
 </head>
 
 <body class=" bg-gray-200">
