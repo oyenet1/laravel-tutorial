@@ -6,7 +6,12 @@ class PostController extends Controller
 {
     public function homepage()
     {
-        return view('homepage');
+        $name = "Banji Adedapo";
+        $age = 78;
+        $nums = 4;
+
+        $myFood = ["Eba", "Rice", "Beans", "Yam", "egg"];
+        return view('homepage', compact(['name', 'age', 'myFood', 'nums']));
     }
     public function index()
     {
@@ -17,5 +22,4 @@ class PostController extends Controller
     {
         return view('posts.show', compact(['id']));
     }
-
 }
