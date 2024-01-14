@@ -7,11 +7,13 @@ class PostController extends Controller
     public function homepage()
     {
         $name = "Banji Adedapo";
-        $age = 78;
+        $age = 39;
         $nums = 4;
 
         $myFood = ["Eba", "Rice", "Beans", "Yam", "egg"];
-        return view('homepage', compact(['name', 'age', 'myFood', 'nums']));
+        $isTall = true;
+        $isShort = false;
+        return view('homepage', compact(['name', 'age', 'myFood', 'nums', 'isTall', 'isShort']));
     }
     public function index()
     {

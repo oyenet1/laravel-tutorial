@@ -49,7 +49,6 @@
                 <h1 class="text-4xl font-bold">Foreach loop</h1>
                 <div class="my-4">
                     <ul class="ml-4 list-inside list-disk">
-
                         @foreach ($myFood as $food)
                             <li @class([
                                 'text-xl capitalize',
@@ -60,6 +59,59 @@
                         @endforeach
                     </ul>
                 </div>
+            </div>
+            <div class="p-4 bg-white rounded-lg shadow">
+                <h1 class="text-4xl font-bold">If statement</h1>
+                <div class="my-4">
+                    @if ($isTall)
+                        <p>I am tall</p>
+                    @endif
+                </div>
+            </div>
+            <div class="p-4 bg-white rounded-lg shadow">
+                <h1 class="text-4xl font-bold">If else statement</h1>
+                <div class="my-4">
+                    @if ($isShort)
+                        <p>I am short</p>
+                    @else
+                        <p>I am not short</p>
+                    @endif
+                </div>
+            </div>
+            <div class="p-4 bg-white rounded-lg shadow">
+                <h1 class="text-4xl font-bold">Else if statement</h1>
+                <div class="my-4">
+                    @if ($age < 18)
+                        <p>Eeyah You are too young</p>
+                    @elseif($age > 40)
+                        <p>You are too old</p>
+                    @else
+                        <p>Congrats! You are qualify to work with us</p>
+                    @endif
+                </div>
+            </div>
+            <div class="p-4 bg-white rounded-lg shadow">
+                <h1 class="text-4xl font-bold">Switch statement</h1>
+                @switch(25)
+                    @case(20)
+                        <p>You are 20years</p>
+                    @break
+
+                    @case(25)
+                        <p>You are 25years</p>
+                    @break
+
+                    @case(40)
+                        <p>You are 20years</p>
+                    @break
+
+                    @case(20)
+                        <p>You are 40years</p>
+                    @break
+
+                    @default
+                        <p>Age not specify</p>
+                @endswitch
             </div>
         </div>
     </div>
