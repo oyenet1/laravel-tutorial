@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+use Illuminate\Support\Facades\DB;
+
 class PostController extends Controller
 {
     public function homepage()
@@ -17,11 +20,12 @@ class PostController extends Controller
     }
     public function index()
     {
-        return view('posts.index');
+        $posts = Post::all();
+        return view('posts.index', compact(['posts']));
     }
 
-    public function show($id)
+    public function show(Post $post)
     {
-        return view('posts.show', compact(['id']));
+        return view('posts.show', compact(['post']));
     }
 }
